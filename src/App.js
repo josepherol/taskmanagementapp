@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { MainProvider } from "./MainContext";
+import CreateTask from "./CreateTask";
+import FilterTask from "./FilterTask";
+import FilterSecond from "./FilterSecond";
+import SortTask from "./SortTask";
+import DisplayTasks from "./DisplayTasks";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainProvider>
+      <div className="App">
+        <h1 className="mt-2">Task Management App</h1>
+
+        <div className="container">
+          <div className="row">
+            <div className="col-8 mx-auto mt-5">
+              <CreateTask />
+            </div>
+
+            <div className="col-8 mx-auto">
+              <FilterTask />
+            </div>
+
+            <div className="col-8 mx-auto">
+              <FilterSecond />
+            </div>
+
+            <div className="col-8 mx-auto">
+              <SortTask />
+            </div>
+
+            <div className="col-8 mx-auto ">
+              <DisplayTasks />
+            </div>
+          </div>
+        </div>
+      </div>
+    </MainProvider>
   );
 }
 
